@@ -1,0 +1,7 @@
+{"Time":"2024-01-25T12:02:58.547789047+07:00","Region":"APAC","PipelineId":2022,"MetricDetails":["signup_fail 0","signup_success 0","signup_total 0"]}
+{"Time":"2024-01-25T12:02:58.548015042+07:00","Region":"APAC","PipelineId":2022,"MetricDetails":["signin_error 0","signin_fail 0","signin_success 0","signin_total 0"]}
+{"Time":"2024-01-25T12:03:03.547034355+07:00","Region":"APAC","PipelineId":2022,"MetricDetails":["signin_error 0","signin_fail 0","signin_success 0","signin_total 0"]}
+{"Time":"2024-01-25T12:03:03.546834539+07:00","Region":"APAC","PipelineId":2022,"MetricDetails":["signup_fail 0","signup_success 0","signup_total 0"]}
+{"Time":"2024-01-25T12:03:08.550352411+07:00","Region":"APAC","PipelineId":2022,"MetricDetails":["signup_fail 0","signup_success 0","signup_total 0"]}
+{"Time":"2024-01-25T12:03:08.550945284+07:00","Region":"APAC","PipelineId":2022,"MetricDetails":["signin_error 0","signin_fail 0","signin_success 0","signin_total 0"]}
+{"Time":"2024-01-25T12:03:13.549474163+07:00","Region":"APAC","PipelineId":2022,"MetricDetails":["signup_fail 0","signup_success 0","signup_total 0"]}
