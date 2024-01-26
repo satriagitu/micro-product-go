@@ -18,7 +18,7 @@ Sometimes it is better to use Encoder than json.Marshal as we dont have to use a
 Middleware ensures Connectivity between 2 or more types applications or components. You can write your validation code in middleware to make sure data is validated and then only goes to your handlers
 
 ## Running using Docker Image
-`docker build . -t shadowshotx/product-go-micro`
+`docker build . -t satriagitu/product-go-micro`
 
 `docker run --network host -d <image-name/id>`
 

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: product-go-micro  # Name of the containers which will be run as pods.
-        image: shadowshotx/product-go-micro # We specify the image name in spec. This will be taken from docker hub
+        image: satriagitu/product-go-micro # We specify the image name in spec. This will be taken from docker hub
         imagePullPolicy: IfNotPresent # We only pull if the latest image is not present
         resources:
           requests:

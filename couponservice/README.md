@@ -48,7 +48,7 @@ We are using consumer groups of redis to read from a stream. It is a good practi
 
 We will push our image to dockerhub so that this can be downloaded by minikube. Do remember to login first.
 
-`docker push shadowshotx/product-go-micro`
+`docker push satriagitu/product-go-micro`
 
 Now, we will deploy the .yaml files to create deployment and services.
 
