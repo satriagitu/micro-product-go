@@ -8,4 +8,4 @@ functional-tests:
 	go test ./functional_tests/transformer_test.go
 
 build:
-	docker build . -t shadowshotx/product-go-micro
+	docker build . -t satriagitu/product-go-micro
