@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -21,7 +22,6 @@ import (
 )
 
 func PingHandler(rw http.ResponseWriter, r *http.Request) {
-	fmt.Println("eh")
 	rw.Write([]byte("Your App seems Healthy"))
 }
 
@@ -113,7 +113,7 @@ func main() {
 	transformerOrderRouter.HandleFunc("/transform", transc.TransformerHandler).Methods("GET")
 
 	// CORS Header
-	// cors := gohandlers.CORS(gohandlers.AllowedOrigins([]string{"http://localhost:3000"}))
+	cors := handlers.CORS(handlers.AllowedOrigins([]string{"http://localhost:3000"}))
 
 	// Adding Prometheus http handler to expose the metrics
 	// this will display our metrics as well as some standard metrics
@@ -122,8 +122,8 @@ func main() {
 	// HTTP Server
 	// Add Time outs
 	server := &http.Server{
-		Addr: ":9090",
-		// Handler: cors(mainRouter),
+		Addr:    ":9090",
+		Handler: cors(mainRouter),
 	}
 	err = server.ListenAndServe()
 	if err != nil {
