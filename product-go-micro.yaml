@@ -1,0 +1,37 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: product-go-micro
+  namespace: default
+  labels:
+    app: product-go-micro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-go-micro
+  template:
+    metadata:
+      labels:
+        app: product-go-micro
+    spec:
+      containers:
+      - name: product-go-micro
+        image: "satriagitu/product-go-micro:latest"
+        ports:
+          - containerPort: 9090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-go-micro
+  namespace: default
+spec:
+  selector:
+    app: product-go-micro
+  type: LoadBalancer
+  ports:
+  - name: http
+    targetPort: 9090
+    port: 80
