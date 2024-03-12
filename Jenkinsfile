@@ -45,9 +45,8 @@ pipeline {
             steps {
                 withCredentials([
                     string(credentialsId: 'my_kubernetes', variable: 'api_token')
-                ]) {
-		    sh 'kubectl config get-clusters'
-   
+                ]){
+                    sh 'kubectl --token $api_token --server https://192.168.49.2:8443  --insecure-skip-tls-verify=true apply config get-clusters'   
                 }
             }
         }
