@@ -46,7 +46,8 @@ pipeline {
                 withCredentials([
                     string(credentialsId: 'my_kubernetes', variable: 'api_token')
                 ]) {
-                    sh 'kubectl --token $api_token --server https://192.168.49.2:8443  --insecure-skip-tls-verify=true apply -f product-go-micro.yaml'
+		    sh 'kubectl config get-clusters'
+   
                 }
             }
         }
