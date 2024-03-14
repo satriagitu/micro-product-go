@@ -31,20 +31,20 @@ To Handle files usign a Golang server, we should not store them on our disk but 
 To deal with very large files to make the data transfer efficient, we use GZipping. Time to compress and decompress is less than time taken for the unzipped file to be transferred.
 
 ## Note Deploy to Minikube (WSL)
-sudo usermod -aG docker jenkins
-sudo mkdir -p /var/lib/jenkins/.kube
-sudo cp /path/to/your/kubeconfig /var/lib/jenkins/.kube/config 
-sudo chown jenkins:jenkins /var/lib/jenkins/.kube/config
-sudo systemctl restart jenkins
-sudo chmod -R +r /home/satriagitu/.minikube/
+`sudo usermod -aG docker jenkins`
+`sudo mkdir -p /var/lib/jenkins/.kube`
+`sudo cp /path/to/your/kubeconfig /var/lib/jenkins/.kube/config` 
+`sudo chown jenkins:jenkins /var/lib/jenkins/.kube/config`
+`sudo systemctl restart jenkins`
+`sudo chmod -R +r /home/satriagitu/.minikube/`
 
-sudo cp /home/satriagitu/.minikube/profiles/minikube/client.key /var/lib/jenkins/.minikube/profiles/minikube/client.key
-sudo cp /home/satriagitu/.minikube/profiles/minikube/client.crt /var/lib/jenkins/.minikube/profiles/minikube/client.crt
+`sudo cp /home/satriagitu/.minikube/profiles/minikube/client.key /var/lib/jenkins/.minikube/profiles/minikube/client.key`
+`sudo cp /home/satriagitu/.minikube/profiles/minikube/client.crt /var/lib/jenkins/.minikube/profiles/minikube/client.crt`
 
-update file config (sudo nano /var/lib/jenkins/.kube/config)
-update location file client-certificate & client-key:
-    client-certificate: /var/lib/jenkins/.minikube/profiles/minikube/client.crt
-    client-key: /var/lib/jenkins/.minikube/profiles/minikube/client.key
+`update file config (sudo nano /var/lib/jenkins/.kube/config)`
+`update location file client-certificate & client-key:`
+    `client-certificate: /var/lib/jenkins/.minikube/profiles/minikube/client.crt`
+    `client-key: /var/lib/jenkins/.minikube/profiles/minikube/client.key`
 
 ## **(/path/to/your/kubeconfig = /home/satriagitu/.kube)
 
