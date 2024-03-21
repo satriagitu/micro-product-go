@@ -41,10 +41,6 @@ pipeline {
                 }
             }
         }
-        stage('Helm Chart Git Checkout'){
-            git branch: "main",
-                credentialsId: 'github_satriagitu'
-        }
         stage('Deploy App on K8S with Helm') {
             steps {
                 withCredentials([
