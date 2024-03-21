@@ -46,7 +46,7 @@ pipeline {
                 withCredentials([
                     string(credentialsId: 'my_kubernetes', variable: 'api_token')
                 ]){
-                    sh 'kubectl --token $api_token apply -f product-go-micro.yaml'   
+                    sh 'kubectl --token $api_token --insecure-skip-tls-verify=true apply -f product-go-micro.yaml'   
                 }
             }
         }
