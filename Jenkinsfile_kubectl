@@ -12,19 +12,19 @@ pipeline {
     }
 
     stages {
-        stage("Unit Test") {
+        stage("unit-test") {
             steps {
                 echo 'UNIT TEST EXECUTION STARTED'
                 sh 'make unit-tests'
             }
         }
-        stage("Functional Test") {
+        stage("functional-test") {
             steps {
                 echo 'FUNCTIONAL TEST EXECUTION STARTED'
                 sh 'make functional-tests'
             }
         }
-        stage("Build Image") {
+        stage("build") {
             steps {
                 echo 'BUILD EXECUTION STARTED'
                 sh 'go version'
@@ -41,17 +41,13 @@ pipeline {
                 }
             }
         }
-        stage('Helm Chart Git Checkout'){
-            git branch: "main",
-                credentialsId: 'github_satriagitu'
-        }
-        stage('Deploy App on K8S with Helm') {
+        stage('Deploy App on k8s') {
             steps {
                 withCredentials([
                     string(credentialsId: 'my_kubernetes', variable: 'api_token')
                 ]){
-                    sh 'helm upgrade --install product-go-micro helm-product-go-micro -f helm-product-go-micro/values.yaml -n default --namespace=default  --kube-context=minikube'   
-                }x
+                    sh 'kubectl --insecure-skip-tls-verify=true apply -f product-go-micro.yaml'   
+                }
             }
         }
     }
