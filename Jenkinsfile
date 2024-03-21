@@ -47,7 +47,7 @@ pipeline {
                     string(credentialsId: 'my_kubernetes', variable: 'api_token')
                 ]){
                     sh 'helm upgrade --install product-go-micro helm-product-go-micro -f helm-product-go-micro/values.yaml -n default --namespace=default  --kube-context=minikube'   
-                }x
+                }
             }
         }
     }
